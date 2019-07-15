@@ -1,0 +1,33 @@
+<p>
+test works {{name}}!
+</p>
+<div>
+  Inline Template
+  </div>
+  <h2> what do you see?</h2>
+  <h1>{{"Welcome " + name}}</h1>
+  <h2>{{name.length}}</h2>
+  <h3 [class]='successClass'>{{greetUser()}}</h3>
+  <h2>{{siteUrl}}</h2>
+  <input [id]="myId" type="text" value="Something">
+  <input bind-disabled="isDisabled" [id]="myId" type="text" value="Anything">
+  <h2 [class.text-danger]='hasError'>{{siteUrl}}</h2>
+
+  <h2 [ngClass]='messageClass'>{{siteUrl}} style using messageClass object</h2>
+  <h2 [style.color]="hasError ? 'red' : 'green'"> what do you see?</h2>
+  <h2 [style.color]="highlightColor">{{name.length}} using style.color</h2>
+
+  <h2 [ngStyle]="styleClasses"> what do you see? using style class </h2>
+
+  <button (click)="onClick($event)">Greet</button>
+&nbsp;&nbsp;
+  <button (click)="greeting='Welcome Sayon 2'">Greet1</button>
+  {{greeting}}
+<br>
+<br>
+<input #myInput type="text">
+<button (click)="logEvent(myInput.value)">Log</button>
+<br>
+<br>
+<input [(ngModel)]="newName" type="text">
+{{newName}}
