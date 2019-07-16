@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'CodeEvolution';
+  public name1="Sayon";
+  public message="";
 }

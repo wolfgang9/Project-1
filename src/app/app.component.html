@@ -1,5 +1,6 @@
 <hello name="{{ name }}"></hello>
 <p>
   Start editing to see some magic happen :)
-</p>
-<div app-test></div>
+  {{message}}
+  </p>
+<app-test (childEvent)="message=$event" [parentData]="name1"></app-test>

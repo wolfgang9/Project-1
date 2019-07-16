@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: '[app-test]',
+  selector: 'app-test',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
@@ -18,9 +18,9 @@ export class TestComponent implements OnInit {
     "text-danger": this.hasError,
     "text-special": this.isSpecial
   }
-
+  public colorCase="yellow";
   public newName="";
-
+  public displayName=true;
   public styleClasses={
     fontStyle: "bold",
     color: "pink",
@@ -28,6 +28,7 @@ export class TestComponent implements OnInit {
     borderColor: "red",
     borderStyle: "dashed"
   }
+  public colors = ["red","green","blue","yellow"];
   public highlightColor="orange";
   onClick(event){
     console.log(event);
@@ -44,4 +45,11 @@ export class TestComponent implements OnInit {
     greetUser(){
       return "Hello "+this.name;
     }
+    @Input('parentData') public parentName;
+    @Output() public childEvent= new EventEmitter();
+    fireEvent(){
+      this.childEvent.emit('Hey CodeEvolution from test Component');
+    }
+    public date=new Date();
+
 }
