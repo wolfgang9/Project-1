@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { FormioAuthService } from 'angular-formio/auth';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
-  constructor(public auth: FormioAuthService) {}
+export class AppComponent  {
+  name = 'CodeEvolution';
+  public name1="Sayon";
+  public message="";
 }
